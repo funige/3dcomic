@@ -51,6 +51,8 @@ class IMPORT_OT_psd_to_3dcomic(bpy.types.Operator, ImportHelper):
         bpy.context.scene.render.use_multiview = True
         bpy.context.scene.render.image_settings.views_format = 'STEREO_3D'
         bpy.context.scene.render.image_settings.stereo_3d_format.display_mode = 'ANAGLYPH'
+        # カラーマネジメントの設定
+        bpy.context.scene.view_settings.view_transform = 'Standard'
         
         # psdと同じディレクトリにテクスチャを置くフォルダを用意する
         basename = bpy.path.basename(path)
